@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Recaptcha 2 sample</title>
+    <!-- include this script for recaptcha -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href="./css/styles.css" rel="stylesheet">
 </head>
@@ -16,6 +17,7 @@
     <div>
         <input type="email" name="email" placeholder="Email">
     </div>
+    <!-- data-sitekey is your Site key https://snag.gy/NOoWQg.jpg -->
     <div class="g-recaptcha" data-sitekey="6LdjECQUAAAAAHEBViLSQ67X6G0yqAyAyZoUP_Z_"></div>
     <div>
         <button type="submit">Submit form</button>
@@ -27,6 +29,8 @@ if (count($_POST)) {
     // PHP library that handles calling reCAPTCHA
     // get in from here: https://github.com/formvalidation/addon-recaptcha/blob/master/demo/v2/recaptchalib.php
     require_once "recaptchalib.php";
+
+    // your Secret key https://snag.gy/KoC5qP.jpg
     $secret = '6LdjECQUAAAAAPwdM5LfKaySior3fATBbBT68LId';
     $reCaptcha = new ReCaptcha($secret);
     // if submitted check response
@@ -50,7 +54,6 @@ if (count($_POST)) {
         } return true;
     }
 </script>
-
 
 </body>
 
